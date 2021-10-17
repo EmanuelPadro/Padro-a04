@@ -1,6 +1,6 @@
 package baseline;
 
-public class Names {
+public class Names {//Q:Constructor seems to be getting in the way here man?
 
     Names(){
         //constructor if necessary should be necessary to create array
