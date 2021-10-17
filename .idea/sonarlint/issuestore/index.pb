@@ -35,7 +35,3 @@ B
 exercise43/gradlew,1\1\1159aadfd7dd6cc62e896eaedbd6f9c0d256e669
 L
 .idea/modules/exercise43.iml,c\6\c6b4a380ef3dfdeb1a8de9d59a92c3b8115d3813
-a
-1exercise41/src/main/java/baseline/Solution41.java,4\2\42d212d42fcf68be7848d488b87ceb937c03a361
-\
-,exercise41/src/main/java/baseline/Names.java,4\d\4d571363a7d6d32ac9ee4df2906c80757f3b357e

@@ -53,7 +53,7 @@ public class Solution43 {
         boolean websiteTest = newFolder.mkdir();
 
         if(websiteTest){
-            System.out.println("Created ./website/"+ websiteInfo.Name);
+            System.out.println("Created ./website/"+ websiteInfo.name);
             htmlFile(websiteInfo);
             createCSSJava(websiteInfo);
         }else{
@@ -66,7 +66,7 @@ public class Solution43 {
 
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(file))){
             writer.write(websiteInfo.htmltext);
-            System.out.println(websiteInfo.SuccessMessage + websiteInfo.Name + "/index.html");
+            System.out.println(websiteInfo.successMessage + websiteInfo.name + "/index.html");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -74,24 +74,24 @@ public class Solution43 {
     }
     //Depending on User input creates CSS and/or/neither Java folders
     public static void createCSSJava(Website websiteInfo){
-        if(websiteInfo.JavFol)
+        if(websiteInfo.javFol)
         {
             File newFolder = new File(websiteInfo.currentPath + "/js");
             boolean folderTest = newFolder.mkdir();
 
             if (folderTest) {
-                System.out.println(websiteInfo.SuccessMessage + websiteInfo.Name + "/js");
+                System.out.println(websiteInfo.successMessage + websiteInfo.name + "/js");
             } else {
                 System.out.println("Could not create folder");
             }
         }
-        if(websiteInfo.CssFol)
+        if(websiteInfo.cssFol)
         {
             File newFolder = new File(websiteInfo.currentPath + "/CSS");
             boolean folderTest = newFolder.mkdir();
 
             if (folderTest) {
-                System.out.println("Created ./website/" + websiteInfo.Name + "/CSS");
+                System.out.println("Created ./website/" + websiteInfo.name + "/CSS");
             } else {
                 System.out.println("Could not create folder");
             }

@@ -3,22 +3,22 @@ package baseline;
 //class website to sore all website info and pass between functions
 public class Website {
     //Attributes of website class*Q
-    String Name;
-    String Author;
-    boolean JavFol;
-    boolean CssFol;
+    String name;
+    String author;
+    boolean javFol;
+    boolean cssFol;
     String currentPath;
     String htmltext;
-    String SuccessMessage = "Created ./website/";
+    String successMessage = "Created ./website/";
 
-    Website(String WebsiteName,String WebsiteAuthor, boolean JavScrip_Folder, boolean CSS_Folder)
+    Website(String websiteName,String websiteAuthor, boolean javScripFolder, boolean cssFolder)
     {
-        JavFol = JavScrip_Folder;
-        CssFol = CSS_Folder;
-        Name = WebsiteName;
-        Author = WebsiteAuthor;
-        currentPath = "src/main/java/baseline/" + WebsiteName;
-        htmltext = "<title> " + WebsiteName + " </title>\n" +
-                "<meta> " + WebsiteAuthor + " </meta>";
+        javFol = javScripFolder;
+        cssFol = cssFolder;
+        name = websiteName;
+        author = websiteAuthor;
+        currentPath = "src/main/java/baseline/" + websiteName;
+        htmltext = "<title> " + websiteName + " </title>\n" +
+                "<meta> " + websiteAuthor + " </meta>";
     }
 }
