@@ -6,6 +6,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+/*
+ *  UCF COP3330 Fall 2021 Assignment 4 Solutions
+ *  Copyright 2021 Emanuel Padro
+ */
+
+
 public class Solution43 {
     //This equation tests continuously to see if the user put in y or n and is called by input collector
     public static boolean yesOrno(){
