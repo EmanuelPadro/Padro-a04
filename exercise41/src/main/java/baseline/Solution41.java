@@ -5,20 +5,23 @@ package baseline;
  *  Copyright 2021 Emanuel Padro
  */
 
+import java.util.List;
+
+//reworked the program (have taken this class before) made it more simple to just use one class
+
 public class Solution41 {
 
-
-    //Q: is it ok for this to be static?? or should i instantiate this method
-    public void getInput(){
-        //method which reads input read input
-        //it does so by reading line by line and transferring that to the string array we use on our object class
-
+    public static void ReadFile(List<String> names) {
+        //This method will read input from the input file and add it to the names list
     }
 
+
+    public static void writeToFile(List<String> names) {
+        //will write manipulated input to a output file
+    }
+
+
     public static void main(String[] args) {
-        // make an object for the current class
-        // instatiation => datatype object_name = new datatype
-        Solution41 input = new Solution41();
-        input.getInput();
+        //main will create the list shared trough class and send it to each method
     }
 }
