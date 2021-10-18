@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Solution41{
+
+}
+
+Solution41 <|-- main
+main <|-- WriteToFile
+main <|-- ReadFile
+Solution41 <|-- names
+
+abstract ReadFile{
++Input file reader
++Adds input list names
+}
+
+abstract WriteToFile{
++Write to Output file
++Adds input read to the list names
+}
+abstract main{
++Creates List to be passed along solution41
++Calls eachWriteToFile and ReadFile
+}
+
+class names {
++Lastname,Firstname
+}
+
+@enduml

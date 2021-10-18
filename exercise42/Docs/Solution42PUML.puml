@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Solution42
+abstract ReadFile{
++Reads and scans input file
++splits lines
++allocates split lines into appropriate list
+}
+abstract writeToFile{
++Formats and prints table to output file
+}
+
+abstract main{
+Initializes:
++List: LastName
++List: FirstName
++List: Salary
+++Calls methods
+}
+
+Solution42 <|-- writeToFile
+Solution42 <|-- main
+Solution42 <|-- ReadFile
+
+
+
+@enduml

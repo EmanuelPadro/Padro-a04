@@ -19,8 +19,6 @@ d
 4exercise41/.gradle/configuration-cache/gc.properties,2\b\2b31ffdda549f6910fa62b123d8af58dca108d9d
 ]
 -exercise41/src/test/java/Solution41Tests.java,6\0\608f7fd3303a1629360fad66ba766be01563b57d
-N
-exercise41/docs/MyClasses.puml,1\3\13769c6454fb3a5aad31beca9ca43a14fefb1d28
 T
 $exercise41/data/exercise41_input.txt,d\0\d0e7818ce193e620fd478ec8164b22c7d9fa1f2e
 L

@@ -5,23 +5,59 @@ package baseline;
  *  Copyright 2021 Emanuel Padro
  */
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 //reworked the program (have taken this class before) made it more simple to just use one class
 
 public class Solution41 {
 
-    public static void readFile(List<String> names) {
-        //This method will read input from the input file and add it to the names list
+
+    //This method will read input from the input file and add it to the names list
+    public static void ReadFile(List<String> names) {
+        try {
+            //initializes scanner and input file reader
+            File myfile = new File("exercise41_input.txt");
+            Scanner Reader = new Scanner(myfile);
+            //While loop that will go trought reader and add each line to list
+            while (Reader.hasNextLine()){
+                names.add(Reader.nextLine());
+            }
+            Reader.close();//close reader and catch statement
+        } catch (FileNotFoundException e) {
+            System.out.println("Something went wrong");
+            e.printStackTrace();
+        }
+
     }
 
-
+    //will write manipulated input to a output file
     public static void writeToFile(List<String> names) {
-        //will write manipulated input to a output file
+        try {
+            java.util.Collections.sort(names);
+            FileWriter Writer = new FileWriter ("exercise41_output.txt");
+            Writer.write("Total of " + names.size() + " names \n");//writes total number of names
+            Writer.write("----------------------------\n");
+            //for loop will print to output file each set of names
+            for(String name: names){
+                Writer.write(name + "\n");
+            }
+            Writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-
+    //main will create the list shared trough class and send it to each method
     public static void main(String[] args) {
-        //main will create the list shared trough class and send it to each method
+        List<String> names = new ArrayList<>();
+        ReadFile(names);
+        writeToFile(names);
+
     }
 }

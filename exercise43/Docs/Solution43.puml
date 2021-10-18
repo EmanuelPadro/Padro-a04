@@ -1,0 +1,24 @@
+@startuml
+
+class Solution43{
++main
++YesorNO
++CollectInput
++creator
++htmlFileManager
++Cssandjavafilecreator
+}
+class website{
++String Name
++String author
++boolean Javafolder
++boolean CssFol
+String currentPath
++String htmltext
+}
+
+
+
+
+
+@enduml

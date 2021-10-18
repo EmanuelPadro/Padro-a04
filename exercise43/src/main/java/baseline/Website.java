@@ -11,7 +11,7 @@ public class Website {
     String htmltext;
     String successMessage = "Created ./website/";
 
-    Website(String websiteName,String websiteAuthor, boolean javScripFolder, boolean cssFolder)
+    public Website(String websiteName, String websiteAuthor, boolean javScripFolder, boolean cssFolder)
     {
         javFol = javScripFolder;
         cssFol = cssFolder;
@@ -20,5 +20,9 @@ public class Website {
         currentPath = "src/main/java/baseline/" + websiteName;
         htmltext = "<title> " + websiteName + " </title>\n" +
                 "<meta> " + websiteAuthor + " </meta>";
+    }
+
+    public String returnPath(){
+        return currentPath;
     }
 }

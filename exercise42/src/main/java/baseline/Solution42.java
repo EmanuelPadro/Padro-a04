@@ -7,23 +7,64 @@ package baseline;
 
 
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Solution42 {
-
-
+    //Function that will read input file, take data in it as input an distribute it, use try{}
     public static void readFile(List<String> lastName, List<String> firstName, List<Integer> salary) {
-        //Function that will read input file,
-        // take data in it as input an distribute it
+        try {
+            //set up input file reader and scanner
+            File myfile = new File("exercise42_input.txt");
+            Scanner reader = new Scanner(myfile);
+
+            //while loop that acts as reader that reads input from input file and distributes it to its appropriate lists
+            while (reader.hasNextLine()){
+                // take input as string and split it
+                String lineString = (reader.nextLine());
+                String[] lineSplit = lineString.split(",");
+                //adds the correct split of array into the categories of table
+                int i = 0;
+                lastName.add(lineSplit[i]);
+                firstName.add(lineSplit[i+1]);
+                salary.add(Integer.parseInt(lineSplit[i+2]));
+            }
+            reader.close();
+        }//catch
+        catch (FileNotFoundException e) {
+            System.out.println("Something went wrong");
+            e.printStackTrace();
+        }
     }
 
-
-    public static void writeToFile(List<String> lastName, List<String> firstName, List<Integer> salary) {
-        //Function that writes output to file in table format
+    //Function that writes output to file in table format, will use try{}
+    public static void writeToFile(List<String> LastName, List<String> FirstName, List<Integer> Salary) {
+        try {
+            FileWriter writer = new FileWriter ("exercise42_output.txt");
+            //Writers will use format to display data in a table format using %s
+            writer.write(String.format("%10s %10s %10s \r\n", "Last","First","Salary"));
+            writer.write("--------------------------------\n");
+            for(int i = 0; i < LastName.size(); i++){
+                writer.write(String.format("%10s %10s %10s \r\n",LastName.get(i),FirstName.get(i),Salary.get(i)));
+            }
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-
+    //main will declare lists to pass onto the read and write functions
     public static void main(String[] args) {
-        //main will declare lists to pass onto the read and write functions
+        List<String> lastName = new ArrayList<>();
+        List<String> firstName = new ArrayList<>();
+        List<Integer> salary = new ArrayList<>();
+        readFile(lastName,firstName,salary);
+        writeToFile(lastName,firstName,salary);
+
     }
 }
