@@ -38,16 +38,15 @@ public class Solution41 {
 
     //will write manipulated input to a output file
     public static void writeToFile(List<String> names) {
-        try {
+        try(FileWriter writer = new FileWriter ("exercise41_output.txt");) {
             java.util.Collections.sort(names);
-            FileWriter Writer = new FileWriter ("exercise41_output.txt");
-            Writer.write("Total of " + names.size() + " names \n");//writes total number of names
-            Writer.write("----------------------------\n");
+                        writer.write("Total of " + names.size() + " names \n");//writes total number of names
+            writer.write("----------------------------\n");
             //for loop will print to output file each set of names
             for(String name: names){
-                Writer.write(name + "\n");
+                writer.write(name + "\n");
             }
-            Writer.close();
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

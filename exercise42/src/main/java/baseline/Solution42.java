@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Solution42 {
-    //Function that will read input file, take data in it as input an distribute it, use try{}
+    //Function that will read input file, take data in it as input an distribute it
     public static void readFile(List<String> lastName, List<String> firstName, List<Integer> salary) {
         try {
             //set up input file reader and scanner
@@ -42,22 +42,19 @@ public class Solution42 {
         }
     }
 
-    //Function that writes output to file in table format, will use try{}
-    public static void writeToFile(List<String> LastName, List<String> FirstName, List<Integer> Salary) {
-        try {
-            FileWriter writer = new FileWriter ("exercise42_output.txt");
-            //Writers will use format to display data in a table format using %s
+    //Function that writes output to file in table format
+    public static void writeToFile(List<String> lastName, List<String> firstName, List<Integer> salary) {
+        try(FileWriter writer = new FileWriter ("exercise42_output.txt");) {
+                        //Writers will use format to display data in a table format using %s
             writer.write(String.format("%10s %10s %10s \r\n", "Last","First","Salary"));
             writer.write("--------------------------------\n");
-            for(int i = 0; i < LastName.size(); i++){
-                writer.write(String.format("%10s %10s %10s \r\n",LastName.get(i),FirstName.get(i),Salary.get(i)));
+            for(int i = 0; i < lastName.size(); i++){
+                writer.write(String.format("%10s %10s %10s \r\n",lastName.get(i),firstName.get(i),salary.get(i)));
             }
-            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
     //main will declare lists to pass onto the read and write functions
     public static void main(String[] args) {
         List<String> lastName = new ArrayList<>();
