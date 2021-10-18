@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Solution41 {
 
-    public static void ReadFile(List<String> names) {
+    public static void readFile(List<String> names) {
         //This method will read input from the input file and add it to the names list
     }
 
