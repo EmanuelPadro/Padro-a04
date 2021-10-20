@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 public class Solution42 {
     //Function that will read input file, take data in it as input an distribute it
-    public static void readFile(List<String> lastName, List<String> firstName, List<Integer> salary) {
+    public void readFile(List<String> lastName, List<String> firstName, List<Integer> salary) {
         try {
             //set up input file reader and scanner
             File myfile = new File("exercise42_input.txt");
@@ -43,13 +43,13 @@ public class Solution42 {
     }
 
     //Function that writes output to file in table format
-    public static void writeToFile(List<String> lastName, List<String> firstName, List<Integer> salary) {
-        try(FileWriter writer = new FileWriter ("exercise42_output.txt");) {
+    public void writeToFile(List<String> lastName, List<String> firstName, List<Integer> salary) {
+        try(FileWriter writer = new FileWriter ("exercise42_output.txt")) {
                         //Writers will use format to display data in a table format using %s
-            writer.write(String.format("%10s %10s %10s \r\n", "Last","First","Salary"));
+            writer.write(String.format("%10s %10s %10s \r", "Last","First","Salary"));
             writer.write("--------------------------------\n");
             for(int i = 0; i < lastName.size(); i++){
-                writer.write(String.format("%10s %10s %10s \r\n",lastName.get(i),firstName.get(i),salary.get(i)));
+                writer.write(String.format("%10s %10s %10s \r",lastName.get(i),firstName.get(i),salary.get(i)));
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -60,8 +60,8 @@ public class Solution42 {
         List<String> lastName = new ArrayList<>();
         List<String> firstName = new ArrayList<>();
         List<Integer> salary = new ArrayList<>();
-        readFile(lastName,firstName,salary);
-        writeToFile(lastName,firstName,salary);
+        new Solution42().readFile(lastName,firstName,salary);
+        new Solution42().writeToFile(lastName,firstName,salary);
 
     }
 }
