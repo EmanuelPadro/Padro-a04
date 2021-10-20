@@ -19,26 +19,25 @@ public class Solution41 {
 
 
     //This method will read input from the input file and add it to the names list
-    public static void ReadFile(List<String> names) {
+    public void readFile(List<String> names) {
         try {
             //initializes scanner and input file reader
             File myfile = new File("exercise41_input.txt");
-            Scanner Reader = new Scanner(myfile);
+            Scanner reader = new Scanner(myfile);
             //While loop that will go trought reader and add each line to list
-            while (Reader.hasNextLine()){
-                names.add(Reader.nextLine());
+            while (reader.hasNextLine()){
+                names.add(reader.nextLine());
             }
-            Reader.close();//close reader and catch statement
+            reader.close();//close reader and catch statement
         } catch (FileNotFoundException e) {
             System.out.println("Something went wrong");
             e.printStackTrace();
         }
-
     }
 
     //will write manipulated input to a output file
-    public static void writeToFile(List<String> names) {
-        try(FileWriter writer = new FileWriter ("exercise41_output.txt");) {
+    public void writeToFile(List<String> names) {
+        try(FileWriter writer = new FileWriter ("exercise41_output.txt")) {
             java.util.Collections.sort(names);
                         writer.write("Total of " + names.size() + " names \n");//writes total number of names
             writer.write("----------------------------\n");
@@ -46,7 +45,6 @@ public class Solution41 {
             for(String name: names){
                 writer.write(name + "\n");
             }
-            writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -54,9 +52,10 @@ public class Solution41 {
 
     //main will create the list shared trough class and send it to each method
     public static void main(String[] args) {
+
         List<String> names = new ArrayList<>();
-        ReadFile(names);
-        writeToFile(names);
+        new Solution41().readFile(names);
+        new Solution41().writeToFile(names);
 
     }
 }

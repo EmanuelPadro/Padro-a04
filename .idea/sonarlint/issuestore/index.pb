@@ -69,3 +69,13 @@ a
 1exercise45/src/main/java/baseline/Solution45.java,6\0\60b4fd3ed656662d1876c334a32a8e85ddc4816b
 a
 1exercise46/src/main/java/baseline/Solution46.java,e\c\ec11231f9a3f7666b924d4a6183eb849d22b6acb
+S
+#exercise42/Docs/Solution42PUML.puml,1\5\155225ddd2b9210cb32a1ae3dfb4f071fdf85ee2
+S
+#exercise41/docs/Solution41PUML.puml,c\a\ca4b458de61e213f0519ee558b92a603eda41243
+a
+1exercise43/src/main/java/baseline/Solution43.java,a\a\aa65468317ecb24b375466fda00ae749533d40ad
+^
+.exercise43/src/main/java/baseline/Website.java,3\6\367d855bf86f6ec85ae088a6eb6e7c685c10a976
+\
+,exercise43/src/test/java/Solution43Test.java,5\4\543e2b6ff393627aac98c241095c9b03b1ea6124
